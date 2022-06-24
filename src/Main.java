@@ -14,8 +14,11 @@ public class Main {
     public static void main(String[] args) {
         int[] arr = generateRandomArray();
         int days = arr.length;
+        int salaryMin = 1000000;
+        int salaryMax = 0;
+
         // Example-1
-        double sum = 0;
+        float sum = 0f;
         for (int i : arr) {
             sum += i;
         }
@@ -23,12 +26,22 @@ public class Main {
 
 
         // Example-2
-        Arrays.sort(arr);
-        System.out.println("Минимальная сумма трат за день составила " + arr[0] + " рублей. " +
-                "Максимальная сумма трат за день составила " + arr[arr.length - 1] + " рублей");
+//        Arrays.sort(arr);
+//        System.out.println("Минимальная сумма трат за день составила " + arr[0] + " рублей. " +
+//                "Максимальная сумма трат за день составила " + arr[arr.length - 1] + " рублей");
+        for (int j : arr) {
+            if (salaryMin > j) {
+                salaryMin = j;
+            } else if (salaryMax < j) {
+                salaryMax = j;
+            }
+        }
+        System.out.println("Минимальная сумма трат за день составила " + salaryMin + " рублей. " +
+                "Максимальная сумма трат за день составила " + salaryMax + " рублей");
+
 
         // Example-3
-        double srSum = sum / days;
+        float srSum = sum / days;
         System.out.println("Средняя сумма трат за месяц составила " + srSum + " рублей.");
 
         // Example-4
