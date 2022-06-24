@@ -18,7 +18,7 @@ public class Main {
         int salaryMax = 0;
 
         // Example-1
-        float sum = 0f;
+        int sum = 0;
         for (int i : arr) {
             sum += i;
         }
@@ -41,7 +41,7 @@ public class Main {
 
 
         // Example-3
-        float srSum = sum / days;
+        double srSum = (double) sum / days;
         System.out.println("Средняя сумма трат за месяц составила " + srSum + " рублей.");
 
         // Example-4
